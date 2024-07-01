@@ -1,0 +1,19 @@
+/* Stil für Aufgabe 3 */
+h1 {
+    font-size: 2em;
+    color: #35495e;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

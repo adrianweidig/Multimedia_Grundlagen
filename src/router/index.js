@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Aufgabe1 from '../views/aufgabe1.vue';
+import Aufgabe1e from '../views/aufgabe1e.vue';
+import Aufgabe1f from '../views/aufgabe1f.vue';
 import Aufgabe2 from '../views/aufgabe2.vue';
 import Aufgabe3 from '../views/aufgabe3.vue';
 
@@ -9,9 +10,14 @@ const routes = [
         redirect: '/aufgabe1'
     },
     {
-        path: '/aufgabe1',
-        name: 'Aufgabe1',
-        component: Aufgabe1
+        path: '/aufgabe1e',
+        name: 'Aufgabe1e',
+        component: Aufgabe1e
+    },
+    {
+        path: '/aufgabe1f',
+        name: 'Aufgabe1f',
+        component: Aufgabe1f
     },
     {
         path: '/aufgabe2',

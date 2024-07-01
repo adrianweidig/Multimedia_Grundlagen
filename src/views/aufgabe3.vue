@@ -11,8 +11,4 @@ export default {
 };
 </script>
 
-<style scoped>
-h1 {
-  font-size: 2em;
-}
-</style>
+<style src="../assets/styles/aufgabe3.css" lang="css"></style>

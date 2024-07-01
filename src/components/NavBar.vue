@@ -12,17 +12,4 @@ export default {
 };
 </script>
 
-<style scoped>
-nav {
-  font-size: 24px;
-}
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #42b983;
-}
-nav a.router-link-active {
-  font-weight: bold;
-  color: #35495e;
-}
-</style>
+<style src="../assets/styles/navbar.css" lang="css"></style>
