@@ -32,7 +32,6 @@ export default class HuffmanBaum {
     erzeugeBaum(text) {
         const haeufigkeitMap = this.sortierteHaeufigkeitsMap(text);
 
-        // Erstelle eine Liste aus den Blattknoten
         let knotenListe = [];
 
         for (let [zeichen, haeufigkeit] of haeufigkeitMap) {
