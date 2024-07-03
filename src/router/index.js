@@ -7,7 +7,7 @@ import Aufgabe3 from '../views/aufgabe3.vue';
 const routes = [
     {
         path: '/',
-        redirect: '/aufgabe1'
+        redirect: '/aufgabe1e'
     },
     {
         path: '/aufgabe1e',
