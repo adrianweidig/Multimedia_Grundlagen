@@ -1,19 +1,19 @@
-/* Stil für Aufgabe 3 */
-h1 {
-    font-size: 2em;
-    color: #35495e;
+img {
+    width: 100px;
 }
 
-.container {
+.blur {
+    filter: opacity(50%);
+}
+
+.flex-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    width: 840px;
+    gap: 5px;
+    justify-content: space-around;
+    flex-flow: row wrap;
 }
 
 .card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }

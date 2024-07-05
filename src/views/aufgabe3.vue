@@ -1,13 +1,65 @@
 <template>
-  <div>
-    <h1>Aufgabe 3</h1>
-    <p>Dies ist die Seite für Aufgabe 3.</p>
+  <div id="app">
+    <h1>Maxit</h1>
+    <div>
+      Score Player 1: {{ scorePlayer1 }}
+    </div>
+    <div>
+      Score Player 2: {{ scorePlayer2 }}
+    </div>
+    <br>
+    <div class="flex-container">
+      <div
+          v-for="(card, index) in pictureCards"
+          :key="index"
+          @click="clickMethod(index)"
+          class="card"
+      >
+        <img v-if="isDiscovered(index)" :src="background" />
+        <img v-else-if="isActiveRowColumn(index)" :src="card.pic" />
+        <img v-else :src="card.pic" class="blur" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import {
+  getColumnIndex,
+  getRowIndex,
+  isActiveRowColumn,
+  isDiscovered,
+  clickMethod,
+  initializeGame,
+  shuffleArray
+} from "../models/aufgabe3.js";
+
 export default {
-  name: 'Aufgabe3'
+  data() {
+    return {
+      scorePlayer1: 0,
+      scorePlayer2: 0,
+      activeRow: 4,
+      activeColumn: 4,
+      activePlayer: 0,
+      background: 'src/assets/img/invis.gif',
+      pictureCards: [],
+      discoveredCards: 0,
+      gridSize: 8,
+    };
+  },
+  methods: {
+    getColumnIndex,
+    getRowIndex,
+    isActiveRowColumn,
+    isDiscovered,
+    clickMethod,
+    initializeGame,
+    shuffleArray
+  },
+  mounted() {
+    this.initializeGame();
+  }
 };
 </script>
 
