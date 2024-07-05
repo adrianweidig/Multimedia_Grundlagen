@@ -1,16 +1,58 @@
-/* Stil für die Navigationsleiste */
-nav {
-    background-color: #35495e;
-    color: #fff;
-    padding: 10px;
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
 }
 
-nav a {
-    color: #fff;
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #b0bec5, #90a4ae);
+    padding: 0;
+    height: 60px; /* Adjust height as needed */
+    border-radius: 8px;
+    margin: 1rem auto;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: #ffffff;
     text-decoration: none;
-    margin-right: 20px;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #eceff1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        height: auto; /* Adjust height for vertical layout */
+    }
+
+    .nav-link {
+        margin: 0.5rem 0;
+        height: 40px; /* Adjust height for vertical links */
+    }
 }
