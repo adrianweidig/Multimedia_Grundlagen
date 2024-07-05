@@ -1,3 +1,5 @@
+// Normalerweise mache ich Funktionen immer deutsch aber da manche schon auf Englisch waren, habe ich dies beibehalten
+
 export function getColumnIndex(index) {
     return index % this.gridSize;
 }
@@ -42,32 +44,68 @@ export function clickMethod(index) {
 
     // Spieler wechseln
     this.activePlayer = 1 - this.activePlayer;
+    console.log("Aktiver Spieler:" + (this.activePlayer + 1))
 }
+
+export function computerMove() {
+    let bestMove = -Infinity;
+    let bestIndex = -1;
+
+    // Alle möglichen Züge in der aktuellen Spalte überprüfen
+    for (let i = 0; i < this.gridSize; i++) {
+        const rowIndex = i * this.gridSize + this.activeColumn; // Aktuelle Spalte überprüfen
+        if (this.isDiscovered(rowIndex)) {
+            continue; // Überspringe bereits entdeckte Karten
+        }
+
+        let maxInRow = -Infinity;
+
+        // Finde das Maximum in der Zeile
+        for (let j = 0; j < this.gridSize; j++) {
+            const index = i * this.gridSize + j;
+            if (!this.isDiscovered(index) && this.pictureCards[index].value > maxInRow) {
+                maxInRow = this.pictureCards[index].value;
+            }
+        }
+
+        const potentialMoveValue = this.pictureCards[rowIndex].value - maxInRow;
+
+        if (potentialMoveValue > bestMove) {
+            bestMove = potentialMoveValue;
+            bestIndex = rowIndex;
+        }
+    }
+
+    if (bestIndex !== -1) {
+        this.clickMethod(bestIndex);
+    }
+}
+
 
 export function initializeGame() {
     const imagePositives = [
-        { pic: 'src/assets/img/p1.png', value: 1, discovered: false },
-        { pic: 'src/assets/img/p2.png', value: 2, discovered: false },
-        { pic: 'src/assets/img/p3.png', value: 3, discovered: false },
-        { pic: 'src/assets/img/p4.png', value: 4, discovered: false },
-        { pic: 'src/assets/img/p5.png', value: 5, discovered: false },
-        { pic: 'src/assets/img/p6.png', value: 6, discovered: false },
-        { pic: 'src/assets/img/p7.png', value: 7, discovered: false },
-        { pic: 'src/assets/img/p8.png', value: 8, discovered: false },
-        { pic: 'src/assets/img/p9.png', value: 9, discovered: false },
-        { pic: 'src/assets/img/p10.png', value: 10, discovered: false }
+        {pic: 'src/assets/img/p1.png', value: 1, discovered: false},
+        {pic: 'src/assets/img/p2.png', value: 2, discovered: false},
+        {pic: 'src/assets/img/p3.png', value: 3, discovered: false},
+        {pic: 'src/assets/img/p4.png', value: 4, discovered: false},
+        {pic: 'src/assets/img/p5.png', value: 5, discovered: false},
+        {pic: 'src/assets/img/p6.png', value: 6, discovered: false},
+        {pic: 'src/assets/img/p7.png', value: 7, discovered: false},
+        {pic: 'src/assets/img/p8.png', value: 8, discovered: false},
+        {pic: 'src/assets/img/p9.png', value: 9, discovered: false},
+        {pic: 'src/assets/img/p10.png', value: 10, discovered: false}
     ];
     const imageNegatives = [
-        { pic: 'src/assets/img/m1.png', value: -1, discovered: false },
-        { pic: 'src/assets/img/m2.png', value: -2, discovered: false },
-        { pic: 'src/assets/img/m3.png', value: -3, discovered: false },
-        { pic: 'src/assets/img/m4.png', value: -4, discovered: false },
-        { pic: 'src/assets/img/m5.png', value: -5, discovered: false },
-        { pic: 'src/assets/img/m6.png', value: -6, discovered: false },
-        { pic: 'src/assets/img/m7.png', value: -7, discovered: false },
-        { pic: 'src/assets/img/m8.png', value: -8, discovered: false },
-        { pic: 'src/assets/img/m9.png', value: -9, discovered: false },
-        { pic: 'src/assets/img/m10.png', value: -10, discovered: false }
+        {pic: 'src/assets/img/m1.png', value: -1, discovered: false},
+        {pic: 'src/assets/img/m2.png', value: -2, discovered: false},
+        {pic: 'src/assets/img/m3.png', value: -3, discovered: false},
+        {pic: 'src/assets/img/m4.png', value: -4, discovered: false},
+        {pic: 'src/assets/img/m5.png', value: -5, discovered: false},
+        {pic: 'src/assets/img/m6.png', value: -6, discovered: false},
+        {pic: 'src/assets/img/m7.png', value: -7, discovered: false},
+        {pic: 'src/assets/img/m8.png', value: -8, discovered: false},
+        {pic: 'src/assets/img/m9.png', value: -9, discovered: false},
+        {pic: 'src/assets/img/m10.png', value: -10, discovered: false}
     ];
     const images = new Array(this.gridSize * this.gridSize);
     for (let i = 0; i < images.length / 2; i++) {

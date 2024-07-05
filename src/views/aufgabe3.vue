@@ -15,9 +15,9 @@
           @click="clickMethod(index)"
           class="card"
       >
-        <img v-if="isDiscovered(index)" :src="background" />
-        <img v-else-if="isActiveRowColumn(index)" :src="card.pic" />
-        <img v-else :src="card.pic" class="blur" />
+        <img v-if="isDiscovered(index)" :src="background"/>
+        <img v-else-if="isActiveRowColumn(index)" :src="card.pic"/>
+        <img v-else :src="card.pic" class="blur"/>
       </div>
     </div>
   </div>
@@ -30,9 +30,10 @@ import {
   isActiveRowColumn,
   isDiscovered,
   clickMethod,
+  computerMove,
   initializeGame,
   shuffleArray
-} from "../models/aufgabe3.js";
+} from '../models/aufgabe3.js';
 
 export default {
   data() {
@@ -54,11 +55,19 @@ export default {
     isActiveRowColumn,
     isDiscovered,
     clickMethod,
+    computerMove,
     initializeGame,
     shuffleArray
   },
   mounted() {
     this.initializeGame();
+  },
+  watch: {
+    activePlayer(newVal) {
+      if (newVal === 1) {
+        this.computerMove();
+      }
+    }
   }
 };
 </script>
