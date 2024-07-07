@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import {createRouter, createWebHistory} from 'vue-router';
 import Aufgabe1 from '../views/aufgabe1.vue';
 import Aufgabe2 from '../views/aufgabe2.vue';
 import Aufgabe3 from '../views/aufgabe3.vue';

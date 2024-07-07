@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar">
-    <router-link to="/aufgabe1" class="nav-link">Aufgabe 1</router-link>
-    <router-link to="/aufgabe2" class="nav-link">Aufgabe 2</router-link>
-    <router-link to="/aufgabe3" class="nav-link">Aufgabe 3</router-link>
-    <router-link to="/aufgabe4" class="nav-link">Aufgabe 4</router-link>
+    <router-link class="nav-link" to="/aufgabe1">Aufgabe 1</router-link>
+    <router-link class="nav-link" to="/aufgabe2">Aufgabe 2</router-link>
+    <router-link class="nav-link" to="/aufgabe3">Aufgabe 3</router-link>
+    <router-link class="nav-link" to="/aufgabe4">Aufgabe 4</router-link>
   </nav>
 </template>
 
@@ -13,4 +13,4 @@ export default {
 };
 </script>
 
-<style src="../assets/styles/navbar.css" lang="css"></style>
+<style lang="css" src="../assets/styles/navbar.css"></style>

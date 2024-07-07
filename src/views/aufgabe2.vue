@@ -4,28 +4,29 @@
     <p>Geben Sie die Koeffizienten a, b und c des Polynoms ax² + bx + c ein:</p>
     <div class="input-container">
       <label for="input-a">a:</label>
-      <input type="number" id="input-a" v-model.number="a">
+      <input id="input-a" v-model.number="a" type="number">
     </div>
     <div class="input-container">
       <label for="input-b">b:</label>
-      <input type="number" id="input-b" v-model.number="b">
+      <input id="input-b" v-model.number="b" type="number">
     </div>
     <div class="input-container">
       <label for="input-c">c:</label>
-      <input type="number" id="input-c" v-model.number="c">
+      <input id="input-c" v-model.number="c" type="number">
     </div>
     <button @click="berechneNullstellen">Berechnen</button>
     <div v-if="nullstellen !== null">
       <p v-if="nullstellen.length === 0">Das Polynom hat keine Nullstellen.</p>
       <p v-if="nullstellen.length === 1">Das Polynom hat eine Nullstelle bei x = {{ nullstellen[0] }}.</p>
-      <p v-if="nullstellen.length === 2">Das Polynom hat zwei Nullstellen bei x1 = {{ nullstellen[0] }} und x2 = {{ nullstellen[1] }}.</p>
+      <p v-if="nullstellen.length === 2">Das Polynom hat zwei Nullstellen bei x1 = {{ nullstellen[0] }} und x2 =
+        {{ nullstellen[1] }}.</p>
     </div>
-    <canvas ref="canvas" width="650" height="450"></canvas>
+    <canvas ref="canvas" height="450" width="650"></canvas>
   </div>
 </template>
 
 <script>
-import { setzeCanvas, zeichneGraph, berechneQuadratischeNullstellen } from '../models/aufgabe2.js';
+import {berechneQuadratischeNullstellen, setzeCanvas, zeichneGraph} from '../models/aufgabe2.js';
 
 export default {
   data() {

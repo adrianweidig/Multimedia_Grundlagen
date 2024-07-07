@@ -6,11 +6,11 @@ export function setzeCanvas(canvasRef) {
     canvas = canvasRef;
 }
 
-export const toCanvasX = function(x) {
+export const toCanvasX = function (x) {
     return (x + (max - min) / 2) * canvas.width / (max - min);
 };
 
-export const toCanvasY = function(y) {
+export const toCanvasY = function (y) {
     return canvas.height - (y + (max - min) / 2) * canvas.height / (max - min);
 };
 

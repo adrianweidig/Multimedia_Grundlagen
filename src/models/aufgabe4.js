@@ -8,7 +8,7 @@ export function daten() {
 
 export const methoden = {
     erledigteTodos: undefined,
-    hinzufuegenTodo: function() {
+    hinzufuegenTodo: function () {
         if (this.neuesTodo.trim() !== '') {
             this.offeneTodos.push({
                 id: Date.now(),
@@ -17,8 +17,8 @@ export const methoden = {
             this.neuesTodo = '';
         }
     },
-    erledigenTodo: function(todo) {
-        this.offeneTodos = this.offeneTodos.filter(function(t) {
+    erledigenTodo: function (todo) {
+        this.offeneTodos = this.offeneTodos.filter(function (t) {
             return t.id !== todo.id;
         });
         this.erledigteTodos.push({

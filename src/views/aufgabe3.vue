@@ -12,8 +12,8 @@
       <div
           v-for="(card, index) in pictureCards"
           :key="index"
-          @click="clickMethod(index)"
           class="card"
+          @click="clickMethod(index)"
       >
         <img v-if="isDiscovered(index)" :src="background"/>
         <img v-else-if="isActiveRowColumn(index)" :src="card.pic"/>
@@ -25,13 +25,13 @@
 
 <script>
 import {
-  getColumnIndex,
-  getRowIndex,
-  isActiveRowColumn,
-  isDiscovered,
   clickMethod,
   computerMove,
+  getColumnIndex,
+  getRowIndex,
   initializeGame,
+  isActiveRowColumn,
+  isDiscovered,
   shuffleArray
 } from '../models/aufgabe3.js';
 
@@ -72,4 +72,4 @@ export default {
 };
 </script>
 
-<style src="../assets/styles/aufgabe3.css" lang="css"></style>
+<style lang="css" src="../assets/styles/aufgabe3.css"></style>

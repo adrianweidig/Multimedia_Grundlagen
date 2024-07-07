@@ -1,7 +1,7 @@
 <template>
   <div class="todo-app">
     <h1>Todo-App</h1>
-    <input v-model="neuesTodo" placeholder="Neues Todo eingeben" />
+    <input v-model="neuesTodo" placeholder="Neues Todo eingeben"/>
     <button @click="hinzufuegenTodo">Neues Todo anlegen</button>
     <div class="todo-listen">
       <div class="offene-todos">
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { daten, methoden } from '../models/aufgabe4.js';
+import {daten, methoden} from '../models/aufgabe4.js';
 
 export default {
   data: daten,
