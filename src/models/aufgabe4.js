@@ -1,11 +1,14 @@
-export const daten = () => ({
-    neuesTodo: '',
-    offeneTodos: [],
-    erledigteTodos: [],
-});
+export function daten() {
+    return {
+        neuesTodo: '',
+        offeneTodos: [],
+        erledigteTodos: [],
+    };
+}
 
 export const methoden = {
-    hinzufuegenTodo() {
+    erledigteTodos: undefined,
+    hinzufuegenTodo: function() {
         if (this.neuesTodo.trim() !== '') {
             this.offeneTodos.push({
                 id: Date.now(),
@@ -14,10 +17,12 @@ export const methoden = {
             this.neuesTodo = '';
         }
     },
-    erledigenTodo(todo) {
-        this.offeneTodos = this.offeneTodos.filter(t => t.id !== todo.id);
+    erledigenTodo: function(todo) {
+        this.offeneTodos = this.offeneTodos.filter(function(t) {
+            return t.id !== todo.id;
+        });
         this.erledigteTodos.push({
-            ...todo,
+            text: todo.text,
             erledigtAm: new Date().toLocaleString(),
         });
     },
